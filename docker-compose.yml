@@ -1,0 +1,15 @@
+services:
+  db-barber:
+    image: postgres:latest
+    container_name: barber-db
+    environment:
+      POSTGRES_DB: barberflow_db
+      POSTGRES_USER: admin_barber
+      POSTGRES_PASSWORD: senha_barber_123
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata_barber:/var/lib/postgresql/data
+
+volumes:
+  pgdata_barber:
